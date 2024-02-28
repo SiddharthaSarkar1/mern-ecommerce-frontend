@@ -1,6 +1,5 @@
-import { Fragment, useState } from "react";
-import { Dialog, Transition } from "@headlessui/react";
-import { XMarkIcon } from "@heroicons/react/24/outline";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const products = [
   {
@@ -66,7 +65,25 @@ export default function Cart() {
                       </p>
                     </div>
                     <div className="flex flex-1 items-end justify-between text-sm">
-                      <p className="text-gray-500">Qty {product.quantity}</p>
+                      <div className="text-gray-500">
+                        <label
+                          htmlFor="quantity"
+                          className="inline mr-5 text-sm font-medium leading-6 text-gray-900"
+                        >
+                          Qty
+                        </label>
+                        <select
+                          name=""
+                          id=""
+                          className="rounded-md text-gray-900"
+                        >
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5</option>
+                        </select>
+                      </div>
 
                       <div className="flex">
                         <button
@@ -93,24 +110,26 @@ export default function Cart() {
             Shipping and taxes calculated at checkout.
           </p>
           <div className="mt-6">
-            <a
-              href="#"
+            <Link
+              to="/checkout"
               className="flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700"
             >
               Checkout
-            </a>
+            </Link>
           </div>
           <div className="mt-6 flex justify-center text-center text-sm text-gray-500">
             <p>
               or{" "}
-              <button
-                type="button"
-                className="font-medium text-indigo-600 hover:text-indigo-500"
-                onClick={() => setOpen(false)}
-              >
-                Continue Shopping
-                <span aria-hidden="true"> &rarr;</span>
-              </button>
+              <Link to="/">
+                <button
+                  type="button"
+                  className="font-medium text-indigo-600 hover:text-indigo-500"
+                  onClick={() => setOpen(false)}
+                >
+                  Continue Shopping
+                  <span aria-hidden="true"> &rarr;</span>
+                </button>
+              </Link>
             </p>
           </div>
         </div>
