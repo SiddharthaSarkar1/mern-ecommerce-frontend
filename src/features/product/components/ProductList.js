@@ -1,8 +1,14 @@
-import React, { useState, Fragment } from "react";
+import React, { useState, Fragment, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { increment, incrementAsync, selectCount } from "../productSlice";
+import {
+  fetchAllProductAsync,
+  increment,
+  incrementAsync,
+  selectAllProducts,
+  selectCount,
+} from "../productSlice";
 import { Dialog, Disclosure, Menu, Transition } from "@headlessui/react";
-import { XMarkIcon } from "@heroicons/react/24/outline";
+import { StarIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import {
   ChevronDownIcon,
   FunnelIcon,
@@ -88,12 +94,12 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-const products = [
+const oldProducts = [
   {
     id: 1,
     name: "Basic Tee",
     href: "#",
-    imageSrc:
+    thumbnail:
       "https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg",
     imageAlt: "Front of men's Basic Tee in black.",
     price: "$35",
@@ -103,7 +109,7 @@ const products = [
     id: 2,
     name: "Basic Tee",
     href: "#",
-    imageSrc:
+    thumbnail:
       "https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-02.jpg",
     imageAlt: "Front of men's Basic Tee in black.",
     price: "$35",
@@ -113,7 +119,7 @@ const products = [
     id: 3,
     name: "Basic Tee",
     href: "#",
-    imageSrc:
+    thumbnail:
       "https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-03.jpg",
     imageAlt: "Front of men's Basic Tee in black.",
     price: "$35",
@@ -123,7 +129,7 @@ const products = [
     id: 4,
     name: "Basic Tee",
     href: "#",
-    imageSrc:
+    thumbnail:
       "https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-04.jpg",
     imageAlt: "Front of men's Basic Tee in black.",
     price: "$35",
@@ -132,7 +138,15 @@ const products = [
 ];
 
 export default function ProductList() {
+  const dispatch = useDispatch();
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
+  const products = useSelector(selectAllProducts);
+
+  useEffect(() => {
+    dispatch(fetchAllProductAsync());
+  }, [dispatch]);
+
+  console.log(products);
 
   return (
     <div>
@@ -398,38 +412,58 @@ export default function ProductList() {
                     <div className="bg-white">
                       <div className="mx-auto max-w-2xl px-4 py-0 sm:px-6 sm:py-0 lg:max-w-7xl lg:px-8">
                         <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
-                          {products.map((product) => (
-                            <Link to="product-detail">
-                              <div key={product.id} className="group relative">
-                                <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
-                                  <img
-                                    src={product.imageSrc}
-                                    alt={product.imageAlt}
-                                    className="h-full w-full object-cover object-center lg:h-full lg:w-full"
-                                  />
-                                </div>
-                                <div className="mt-4 flex justify-between">
-                                  <div>
-                                    <h3 className="text-sm text-gray-700">
-                                      <a href={product.href}>
-                                        <span
-                                          aria-hidden="true"
-                                          className="absolute inset-0"
-                                        />
-                                        {product.name}
-                                      </a>
-                                    </h3>
-                                    <p className="mt-1 text-sm text-gray-500">
-                                      {product.color}
-                                    </p>
+                          {products && products.length > 0
+                            ? products.map((product) => (
+                                <Link to="product-detail">
+                                  <div
+                                    key={product.id}
+                                    className="group relative p-2 border-solid border-2 border-gray-300 rounded-md shadow-sm shadow-gray-200 hover:shadow-gray-400"
+                                  >
+                                    <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-60">
+                                      <img
+                                        src={product.thumbnail}
+                                        alt={product.title}
+                                        className="h-full w-full object-cover object-center lg:h-full lg:w-full"
+                                      />
+                                    </div>
+                                    <div className="mt-4 flex justify-between">
+                                      <div>
+                                        <h3 className="text-sm text-gray-700">
+                                          <a href={product.thumbnail}>
+                                            <span
+                                              aria-hidden="true"
+                                              className="absolute inset-0"
+                                            />
+                                            {product.title}
+                                          </a>
+                                        </h3>
+                                        <p className="mt-1 text-sm text-gray-500">
+                                          <StarIcon className="w-5 h-5 inline mr-2 text-yellow-500" />
+                                          <span className="align-bottom">
+                                            {product.rating}
+                                          </span>
+                                        </p>
+                                      </div>
+                                      <div>
+                                        <p className="text-sm font-medium line-through text-red-500">
+                                          ₹{product.price}
+                                        </p>
+
+                                        <p className="text-sm font-bold text-green-500">
+                                          ₹
+                                          {Math.round(
+                                            product.price *
+                                              (1 -
+                                                product.discountPercentage /
+                                                  100)
+                                          )}
+                                        </p>
+                                      </div>
+                                    </div>
                                   </div>
-                                  <p className="text-sm font-medium text-gray-900">
-                                    {product.price}
-                                  </p>
-                                </div>
-                              </div>
-                            </Link>
-                          ))}
+                                </Link>
+                              ))
+                            : null}
                         </div>
                       </div>
                     </div>
