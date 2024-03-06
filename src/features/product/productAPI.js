@@ -2,7 +2,7 @@
 export function fetchAllProduct() {
   return new Promise(async (resolve) => {
     const response = await fetch("http://localhost:5050/products");
-    const data = response.json();
+    const data = await response.json();
     resolve({ data });
   });
 }
@@ -10,7 +10,7 @@ export function fetchAllProduct() {
 export function fetchProductById(id) {
   return new Promise(async (resolve) => {
     const response = await fetch("http://localhost:5050/products?id="+id);
-    const data = response.json();
+    const data = await response.json();
     resolve({ data });
   });
 }
@@ -55,7 +55,7 @@ export function fetchProductsByFilters(filter, sort, pagination) {
 export function fetchCategories() {
   return new Promise(async (resolve) => {
     const response = await fetch("http://localhost:5050/categories");
-    const data = response.json();
+    const data = await response.json();
     resolve({ data });
   });
 }
@@ -63,7 +63,7 @@ export function fetchCategories() {
 export function fetchBrands() {
   return new Promise(async (resolve) => {
     const response = await fetch("http://localhost:5050/brands");
-    const data = response.json();
+    const data = await response.json();
     resolve({ data });
   });
 }
