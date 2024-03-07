@@ -13,8 +13,33 @@ export function addToCart(item) {
 
 export function fetchItemsByUserId(userId) {
   return new Promise(async (resolve) => {
-    const response = await fetch("http://localhost:5050/cart?user="+userId);
+    const response = await fetch("http://localhost:5050/cart?user=" + userId);
     const data = await response.json();
     resolve({ data });
+  });
+}
+
+export function updateCart(update) {
+  return new Promise(async (resolve) => {
+    const response = await fetch("http://localhost:5050/cart/" + update.id, {
+      method: "PATCH",
+      body: JSON.stringify(update),
+      headers: { "content-type": "application/json" },
+    });
+    const data = await response.json();
+
+    resolve({ data });
+  });
+}
+
+export function deleteItemsFromCart(itemId) {
+  return new Promise(async (resolve) => {
+    const response = await fetch("http://localhost:5050/cart/" + itemId, {
+      method: "DELETE",
+      headers: { "content-type": "application/json" },
+    });
+    const data = await response.json();
+
+    resolve({ data: { id: itemId } });
   });
 }
