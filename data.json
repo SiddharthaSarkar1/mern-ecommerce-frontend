@@ -2434,28 +2434,45 @@
   ],
   "users": [
     {
-      "id": "890b",
-      "fullUrl": "https://github.com/dmalvia/Mern_Stack_Url_Shortner_App1234"
-    },
-    {
       "id": "7f21",
       "email": "hjghjghj@mail.com",
-      "password": "Aaaa12345"
+      "password": "Aaaa12345",
+      "addresses": []
     },
     {
       "id": "0dcd",
       "email": "hjghjghj@mail.com",
-      "password": "Aaaa12345"
+      "password": "Aaaa12345",
+      "addresses": []
     },
     {
       "id": "8b80",
       "email": "abcd1234@mail.com",
-      "password": "Aaaa12345"
+      "password": "Aaaa12345",
+      "addresses": [
+        {
+          "name": "puku pal",
+          "email": "ppal@mail.com",
+          "phone": "9845324567",
+          "street": "kanaipur",
+          "city": "hoogly",
+          "pincode": "788890"
+        },
+        {
+          "name": "Noton Dey",
+          "email": "ND@mail.com",
+          "phone": "6289764532",
+          "street": "kultoli",
+          "city": "p.mednaur",
+          "pincode": "3245667"
+        }
+      ]
     },
     {
       "id": "c9ac",
       "email": "abcd12347@mail.com",
-      "password": "Aaaa12345"
+      "password": "Aaaa12345",
+      "addresses": []
     }
   ],
   "cart": [
@@ -2498,6 +2515,127 @@
       ],
       "quantity": 2,
       "user": "8b80"
+    },
+    {
+      "title": "MacBook Pro",
+      "description": "MacBook Pro 2021 with mini-LED display may launch between September, November",
+      "price": 1749,
+      "discountPercentage": 11.02,
+      "rating": 4.57,
+      "stock": 83,
+      "brand": "Apple",
+      "category": "laptops",
+      "thumbnail": "https://cdn.dummyjson.com/product-images/6/thumbnail.png",
+      "images": [
+        "https://cdn.dummyjson.com/product-images/6/1.png",
+        "https://cdn.dummyjson.com/product-images/6/2.jpg",
+        "https://cdn.dummyjson.com/product-images/6/3.png",
+        "https://cdn.dummyjson.com/product-images/6/4.jpg"
+      ],
+      "id": "b6e0",
+      "quantity": 1,
+      "user": "8b80"
+    }
+  ],
+  "orders": [
+    {
+      "id": "93da",
+      "items": [
+        {
+          "id": "8",
+          "title": "Microsoft Surface Laptop 4",
+          "description": "Style and speed. Stand out on HD video calls backed by Studio Mics. Capture ideas on the vibrant touchscreen.",
+          "price": 1499,
+          "discountPercentage": 10.23,
+          "rating": 4.43,
+          "stock": 68,
+          "brand": "Microsoft Surface",
+          "category": "laptops",
+          "thumbnail": "https://cdn.dummyjson.com/product-images/8/thumbnail.jpg",
+          "images": [
+            "https://cdn.dummyjson.com/product-images/8/1.jpg",
+            "https://cdn.dummyjson.com/product-images/8/2.jpg",
+            "https://cdn.dummyjson.com/product-images/8/3.jpg",
+            "https://cdn.dummyjson.com/product-images/8/4.jpg",
+            "https://cdn.dummyjson.com/product-images/8/thumbnail.jpg"
+          ],
+          "quantity": 1,
+          "user": "8b80"
+        },
+        {
+          "id": "5",
+          "title": "Huawei P30",
+          "description": "Huawei’s re-badged P30 Pro New Edition was officially unveiled yesterday in Germany and now the device has made its way to the UK.",
+          "price": 499,
+          "discountPercentage": 10.58,
+          "rating": 4.09,
+          "stock": 32,
+          "brand": "Huawei",
+          "category": "smartphones",
+          "thumbnail": "https://cdn.dummyjson.com/product-images/5/thumbnail.jpg",
+          "images": [
+            "https://cdn.dummyjson.com/product-images/5/1.jpg",
+            "https://cdn.dummyjson.com/product-images/5/2.jpg",
+            "https://cdn.dummyjson.com/product-images/5/3.jpg"
+          ],
+          "quantity": 2,
+          "user": "8b80"
+        },
+        {
+          "title": "MacBook Pro",
+          "description": "MacBook Pro 2021 with mini-LED display may launch between September, November",
+          "price": 1749,
+          "discountPercentage": 11.02,
+          "rating": 4.57,
+          "stock": 83,
+          "brand": "Apple",
+          "category": "laptops",
+          "thumbnail": "https://cdn.dummyjson.com/product-images/6/thumbnail.png",
+          "images": [
+            "https://cdn.dummyjson.com/product-images/6/1.png",
+            "https://cdn.dummyjson.com/product-images/6/2.jpg",
+            "https://cdn.dummyjson.com/product-images/6/3.png",
+            "https://cdn.dummyjson.com/product-images/6/4.jpg"
+          ],
+          "id": "b6e0",
+          "quantity": 1,
+          "user": "8b80"
+        }
+      ],
+      "totalAmount": 4246,
+      "totalItems": 4,
+      "user": {
+        "id": "8b80",
+        "email": "abcd1234@mail.com",
+        "password": "Aaaa12345",
+        "addresses": [
+          {
+            "name": "puku pal",
+            "email": "ppal@mail.com",
+            "phone": "9845324567",
+            "street": "kanaipur",
+            "city": "hoogly",
+            "pincode": "788890"
+          },
+          {
+            "name": "Noton Dey",
+            "email": "ND@mail.com",
+            "phone": "6289764532",
+            "street": "kultoli",
+            "city": "p.mednaur",
+            "pincode": "3245667"
+          }
+        ]
+      },
+      "paymentMethod": "cash",
+      "selectedAddress": {
+        "name": "puku pal",
+        "email": "ppal@mail.com",
+        "phone": "9845324567",
+        "street": "kanaipur",
+        "city": "hoogly",
+        "pincode": "788890"
+      }
     }
   ]
 }
