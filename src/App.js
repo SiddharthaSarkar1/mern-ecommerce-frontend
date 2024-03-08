@@ -17,6 +17,7 @@ import ProductDetailsPage from "./pages/ProductDetailsPage";
 import Protected from "./features/auth/components/Protected";
 import { fetchItemsByUserIdAsync } from "./features/cart/cartSlice";
 import { selectLoggedInUser } from "./features/auth/authSlice";
+import PageNotFound404 from "./pages/PageNotFound404";
 
 const router = createBrowserRouter([
   {
@@ -59,19 +60,21 @@ const router = createBrowserRouter([
       </Protected>
     ),
   },
+  {
+    path: "*",
+    element: <PageNotFound404 />,
+  },
 ]);
 
 function App() {
-
   const dispatch = useDispatch();
   const user = useSelector(selectLoggedInUser);
 
   useEffect(() => {
-    if(user){
+    if (user) {
       dispatch(fetchItemsByUserIdAsync(user.id));
     }
-  }, [dispatch, user])
-  
+  }, [dispatch, user]);
 
   return (
     <div className="App">
