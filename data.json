@@ -2472,74 +2472,109 @@
       "id": "c9ac",
       "email": "abcd12347@mail.com",
       "password": "Aaaa12345",
-      "addresses": []
+      "addresses": [
+        {
+          "name": "kakon sen",
+          "email": "kakontheking@mail.com",
+          "phone": "62900875432",
+          "street": "test street",
+          "city": "testCity",
+          "pincode": "123456789"
+        },
+        {
+          "name": "koko das",
+          "email": "kd@mail.com",
+          "phone": "6290121212",
+          "street": "test street",
+          "city": "testCity",
+          "pincode": "765432111"
+        }
+      ]
     }
   ],
-  "cart": [
-    {
-      "id": "8",
-      "title": "Microsoft Surface Laptop 4",
-      "description": "Style and speed. Stand out on HD video calls backed by Studio Mics. Capture ideas on the vibrant touchscreen.",
-      "price": 1499,
-      "discountPercentage": 10.23,
-      "rating": 4.43,
-      "stock": 68,
-      "brand": "Microsoft Surface",
-      "category": "laptops",
-      "thumbnail": "https://cdn.dummyjson.com/product-images/8/thumbnail.jpg",
-      "images": [
-        "https://cdn.dummyjson.com/product-images/8/1.jpg",
-        "https://cdn.dummyjson.com/product-images/8/2.jpg",
-        "https://cdn.dummyjson.com/product-images/8/3.jpg",
-        "https://cdn.dummyjson.com/product-images/8/4.jpg",
-        "https://cdn.dummyjson.com/product-images/8/thumbnail.jpg"
-      ],
-      "quantity": 1,
-      "user": "8b80"
-    },
-    {
-      "id": "5",
-      "title": "Huawei P30",
-      "description": "Huawei’s re-badged P30 Pro New Edition was officially unveiled yesterday in Germany and now the device has made its way to the UK.",
-      "price": 499,
-      "discountPercentage": 10.58,
-      "rating": 4.09,
-      "stock": 32,
-      "brand": "Huawei",
-      "category": "smartphones",
-      "thumbnail": "https://cdn.dummyjson.com/product-images/5/thumbnail.jpg",
-      "images": [
-        "https://cdn.dummyjson.com/product-images/5/1.jpg",
-        "https://cdn.dummyjson.com/product-images/5/2.jpg",
-        "https://cdn.dummyjson.com/product-images/5/3.jpg"
-      ],
-      "quantity": 2,
-      "user": "8b80"
-    },
-    {
-      "title": "MacBook Pro",
-      "description": "MacBook Pro 2021 with mini-LED display may launch between September, November",
-      "price": 1749,
-      "discountPercentage": 11.02,
-      "rating": 4.57,
-      "stock": 83,
-      "brand": "Apple",
-      "category": "laptops",
-      "thumbnail": "https://cdn.dummyjson.com/product-images/6/thumbnail.png",
-      "images": [
-        "https://cdn.dummyjson.com/product-images/6/1.png",
-        "https://cdn.dummyjson.com/product-images/6/2.jpg",
-        "https://cdn.dummyjson.com/product-images/6/3.png",
-        "https://cdn.dummyjson.com/product-images/6/4.jpg"
-      ],
-      "id": "b6e0",
-      "quantity": 1,
-      "user": "8b80"
-    }
-  ],
+  "cart": [],
   "orders": [
     {
-      "id": "93da",
+      "id": "8e00",
+      "items": [
+        {
+          "title": "Huawei P30",
+          "description": "Huawei’s re-badged P30 Pro New Edition was officially unveiled yesterday in Germany and now the device has made its way to the UK.",
+          "price": 499,
+          "discountPercentage": 10.58,
+          "rating": 4.09,
+          "stock": 32,
+          "brand": "Huawei",
+          "category": "smartphones",
+          "thumbnail": "https://cdn.dummyjson.com/product-images/5/thumbnail.jpg",
+          "images": [
+            "https://cdn.dummyjson.com/product-images/5/1.jpg",
+            "https://cdn.dummyjson.com/product-images/5/2.jpg",
+            "https://cdn.dummyjson.com/product-images/5/3.jpg"
+          ],
+          "id": "fb9d",
+          "quantity": 1,
+          "user": "c9ac"
+        },
+        {
+          "title": "Samsung Galaxy Book",
+          "description": "Samsung Galaxy Book S (2020) Laptop With Intel Lakefield Chip, 8GB of RAM Launched",
+          "price": 1499,
+          "discountPercentage": 4.15,
+          "rating": 4.25,
+          "stock": 50,
+          "brand": "Samsung",
+          "category": "laptops",
+          "thumbnail": "https://cdn.dummyjson.com/product-images/7/thumbnail.jpg",
+          "images": [
+            "https://cdn.dummyjson.com/product-images/7/1.jpg",
+            "https://cdn.dummyjson.com/product-images/7/2.jpg",
+            "https://cdn.dummyjson.com/product-images/7/3.jpg",
+            "https://cdn.dummyjson.com/product-images/7/thumbnail.jpg"
+          ],
+          "id": "d15d",
+          "quantity": 3,
+          "user": "c9ac"
+        }
+      ],
+      "totalAmount": 4996,
+      "totalItems": 4,
+      "user": {
+        "id": "c9ac",
+        "email": "abcd12347@mail.com",
+        "password": "Aaaa12345",
+        "addresses": [
+          {
+            "name": "kakon sen",
+            "email": "kakontheking@mail.com",
+            "phone": "62900875432",
+            "street": "test street",
+            "city": "testCity",
+            "pincode": "123456789"
+          },
+          {
+            "name": "koko das",
+            "email": "kd@mail.com",
+            "phone": "6290121212",
+            "street": "test street",
+            "city": "testCity",
+            "pincode": "765432111"
+          }
+        ]
+      },
+      "paymentMethod": "cash",
+      "selectedAddress": {
+        "name": "koko das",
+        "email": "kd@mail.com",
+        "phone": "6290121212",
+        "street": "test street",
+        "city": "testCity",
+        "pincode": "765432111"
+      },
+      "status": "pending"
+    },
+    {
+      "id": "e1df",
       "items": [
         {
           "id": "8",
@@ -2635,7 +2670,8 @@
         "street": "kanaipur",
         "city": "hoogly",
         "pincode": "788890"
-      }
+      },
+      "status": "pending"
     }
   ]
 }

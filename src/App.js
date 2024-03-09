@@ -18,6 +18,8 @@ import Protected from "./features/auth/components/Protected";
 import { fetchItemsByUserIdAsync } from "./features/cart/cartSlice";
 import { selectLoggedInUser } from "./features/auth/authSlice";
 import PageNotFound404 from "./pages/PageNotFound404";
+import OrderSuccessPage from "./pages/OrderSuccessPage";
+import UserOrderPage from "./pages/UserOrderPage";
 
 const router = createBrowserRouter([
   {
@@ -59,6 +61,14 @@ const router = createBrowserRouter([
         <ProductDetailsPage />
       </Protected>
     ),
+  },
+  {
+    path: "/order-success/:id",
+    element: <OrderSuccessPage />,
+  },
+  {
+    path: "/orders",
+    element: <UserOrderPage />,
   },
   {
     path: "*",
