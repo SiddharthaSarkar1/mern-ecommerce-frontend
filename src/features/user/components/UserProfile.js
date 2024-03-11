@@ -65,6 +65,11 @@ export default function UserProfile() {
         <h3 className="text-xl font-bold tracking-tight text-rose-600">
           Email Adddress: {user.email}
         </h3>
+        {user.role === "admin" && (
+          <h3 className="text-xl font-bold tracking-tight text-rose-600">
+            Role: {user.role}
+          </h3>
+        )}
 
         <div className="border-t border-gray-200 mt-6 px-4 py-6 sm:px-6">
           {/* Add address form start */}
