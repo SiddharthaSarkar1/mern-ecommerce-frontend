@@ -242,7 +242,10 @@ export default function AdminProductList() {
                   {/* Product grid */}
                   <div className="lg:col-span-3">
                     <div>
-                      <Link to='/admin/product-form' className="rounded-md w-full m-4 bg-green-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-green-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600">
+                      <Link
+                        to="/admin/product-form"
+                        className="rounded-md w-full m-4 bg-green-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-green-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600"
+                      >
                         Add New Product
                       </Link>
                     </div>
@@ -583,12 +586,22 @@ function ProductGrid({ products }) {
                             </p>
                           </div>
                         </div>
+                        {product.deleted && (
+                          <div>
+                            <p className="text-xs font-semibold text-rose-600">
+                              Product Deleted
+                            </p>
+                          </div>
+                        )}
                       </div>
                     </Link>
-                    <div>
-                      <button className="rounded-md w-full my-4 bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+                    <div className="w-full my-4">
+                      <Link
+                        to={`/admin/product-form/edit/${product.id}`}
+                        className="rounded-md w-full my-4 mx-4 bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                      >
                         Edit Product
-                      </button>
+                      </Link>
                     </div>
                   </div>
                 ))

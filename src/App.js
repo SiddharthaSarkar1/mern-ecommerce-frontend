@@ -95,6 +95,14 @@ const router = createBrowserRouter([
     ),
   },
   {
+    path: "/admin/product-form/edit/:id",
+    element: (
+      <ProtectedAdmin>
+        <AdminProductFormPage />
+      </ProtectedAdmin>
+    ),
+  },
+  {
     path: "/order-success/:id",
     element: <OrderSuccessPage />,
   },
@@ -136,7 +144,6 @@ function App() {
       {/* <Home /> */}
       {/* <LoginPage /> */}
       {/* <SignupPage /> */}
-
       <RouterProvider router={router} />
 
       {/* Link must be inside the provider */}

@@ -5,7 +5,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 
 import {
-  fetchAllProductByIdAsync,
+  fetchProductByIdAsync,
   selectedProductById,
 } from "../../product/productSlice";
 import { addToCartAsync } from "../../cart/cartSlice";
@@ -60,7 +60,7 @@ const AdminProductDetails = () => {
   };
 
   useEffect(() => {
-    dispatch(fetchAllProductByIdAsync(params.id));
+    dispatch(fetchProductByIdAsync(params.id));
   }, [dispatch, params.id]);
 
   return (

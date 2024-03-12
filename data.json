@@ -41,24 +41,27 @@
       "id": "3",
       "title": "Samsung Universe 9",
       "description": "Samsung's new variant which goes beyond Galaxy to the Universe",
-      "price": 1249,
+      "price": 1111,
       "discountPercentage": 15.46,
-      "rating": 4.09,
+      "rating": 0,
       "stock": 36,
       "brand": "Samsung",
       "category": "smartphones",
       "thumbnail": "https://cdn.dummyjson.com/product-images/3/thumbnail.jpg",
       "images": [
-        "https://cdn.dummyjson.com/product-images/3/1.jpg"
+        "https://cdn.dummyjson.com/product-images/3/1.jpg",
+        "https://cdn.dummyjson.com/product-images/3/1.jpg",
+        "https://cdn.dummyjson.com/product-images/3/1.jpg",
+        "https://cdn.dummyjson.com/product-images/3/thumbnail.jpg"
       ]
     },
     {
       "id": "4",
       "title": "OPPOF19",
-      "description": "OPPO F19 is officially announced on April 2021.",
+      "description": "OPPO F19 is officially announced on April 2021. OPPO F19 is officially announced on April 2021.",
       "price": 280,
       "discountPercentage": 17.91,
-      "rating": 4.3,
+      "rating": 0,
       "stock": 123,
       "brand": "OPPO",
       "category": "smartphones",
@@ -67,7 +70,6 @@
         "https://cdn.dummyjson.com/product-images/4/1.jpg",
         "https://cdn.dummyjson.com/product-images/4/2.jpg",
         "https://cdn.dummyjson.com/product-images/4/3.jpg",
-        "https://cdn.dummyjson.com/product-images/4/4.jpg",
         "https://cdn.dummyjson.com/product-images/4/thumbnail.jpg"
       ]
     },
@@ -139,9 +141,9 @@
         "https://cdn.dummyjson.com/product-images/8/1.jpg",
         "https://cdn.dummyjson.com/product-images/8/2.jpg",
         "https://cdn.dummyjson.com/product-images/8/3.jpg",
-        "https://cdn.dummyjson.com/product-images/8/4.jpg",
         "https://cdn.dummyjson.com/product-images/8/thumbnail.jpg"
-      ]
+      ],
+      "deleted": true
     },
     {
       "id": "9",
@@ -1838,6 +1840,24 @@
         "https://cdn.dummyjson.com/product-images/100/3.jpg",
         "https://cdn.dummyjson.com/product-images/100/thumbnail.jpg"
       ]
+    },
+    {
+      "id": "64aa",
+      "title": "China Mobile",
+      "description": "Crazy China Mobile",
+      "brand": "Apple",
+      "category": "smartphones",
+      "price": "200",
+      "discount": "10",
+      "stock": "11",
+      "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPEmfjMalC7HMADSdXUsQ5mAyEDXFcSHeDwg&usqp=CAU",
+      "images": [
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPEmfjMalC7HMADSdXUsQ5mAyEDXFcSHeDwg&usqp=CAU",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPEmfjMalC7HMADSdXUsQ5mAyEDXFcSHeDwg&usqp=CAU",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPEmfjMalC7HMADSdXUsQ5mAyEDXFcSHeDwg&usqp=CAU",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPEmfjMalC7HMADSdXUsQ5mAyEDXFcSHeDwg&usqp=CAU"
+      ],
+      "rating": 0
     }
   ],
   "brands": [

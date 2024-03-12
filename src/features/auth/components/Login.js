@@ -4,11 +4,22 @@ import { checkUserAsync, selectError, selectLoggedInUser } from "../authSlice";
 import { Link, Navigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 
+import { toast } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
+
+
+
 export default function Login() {
   const dispatch = useDispatch();
   const error = useSelector(selectError);
 
   const user = useSelector(selectLoggedInUser);
+
+  // if(user){
+  //   toast.success("Success Logged In", {
+  //     position: "top-center"
+  //   });
+  // }
 
   const {
     register,
