@@ -10,6 +10,7 @@ import {
 } from "../../product/productSlice";
 import { addToCartAsync } from "../../cart/cartSlice";
 import { selectLoggedInUser } from "../../auth/authSlice";
+import { discountedPrice } from "../../../app/constants";
 
 //TODO: In server data we will add colors, sizes, highlights. To each products.
 
@@ -154,7 +155,7 @@ const AdminProductDetails = () => {
               <div className="mt-4 lg:row-span-3 lg:mt-0">
                 <h2 className="sr-only">Product information</h2>
                 <p className="text-3xl tracking-tight text-gray-900">
-                  {product.price}
+                  {discountedPrice(product)}
                 </p>
 
                 {/* Reviews */}

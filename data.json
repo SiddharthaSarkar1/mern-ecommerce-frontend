@@ -44,7 +44,7 @@
       "price": 1111,
       "discountPercentage": 15.46,
       "rating": 0,
-      "stock": 36,
+      "stock": 0,
       "brand": "Samsung",
       "category": "smartphones",
       "thumbnail": "https://cdn.dummyjson.com/product-images/3/thumbnail.jpg",
@@ -2551,6 +2551,29 @@
       ],
       "quantity": 1,
       "user": "8b80"
+    },
+    {
+      "0": {
+        "id": "3",
+        "title": "Samsung Universe 9",
+        "description": "Samsung's new variant which goes beyond Galaxy to the Universe",
+        "price": 1111,
+        "discountPercentage": 15.46,
+        "rating": 0,
+        "stock": 0,
+        "brand": "Samsung",
+        "category": "smartphones",
+        "thumbnail": "https://cdn.dummyjson.com/product-images/3/thumbnail.jpg",
+        "images": [
+          "https://cdn.dummyjson.com/product-images/3/1.jpg",
+          "https://cdn.dummyjson.com/product-images/3/1.jpg",
+          "https://cdn.dummyjson.com/product-images/3/1.jpg",
+          "https://cdn.dummyjson.com/product-images/3/thumbnail.jpg"
+        ]
+      },
+      "id": "e123",
+      "quantity": 1,
+      "user": "774a"
     }
   ],
   "orders": [
@@ -2631,7 +2654,7 @@
         "city": "testCity",
         "pincode": "765432111"
       },
-      "status": "pending"
+      "status": "dispatched"
     },
     {
       "id": "e1df",

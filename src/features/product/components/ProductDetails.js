@@ -5,9 +5,10 @@ import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 
 import { fetchProductByIdAsync, selectedProductById } from "../productSlice";
-import { addToCartAsync } from "../../cart/cartSlice";
+import { addToCartAsync, selectItems } from "../../cart/cartSlice";
 import { selectLoggedInUser } from "../../auth/authSlice";
-
+import { discountedPrice } from "../../../app/constants";
+import { toast } from 'react-toastify';
 
 //TODO: In server data we will add colors, sizes, highlights. To each products.
 
@@ -44,18 +45,36 @@ const ProductDetails = () => {
   const [selectedColor, setSelectedColor] = useState(colors[0]);
   const [selectedSize, setSelectedSize] = useState(sizes[2]);
   const user = useSelector(selectLoggedInUser);
-  
 
   // const product = useSelector(selectedProductById);
   //Sidd-TODO: this API is functioning differently so need to verify while developing backend
   const selectedProduct = useSelector(selectedProductById);
   const params = useParams();
+  const items = useSelector(selectItems);
 
   const handleCart = (e) => {
     e.preventDefault();
-    const newItem = { ...selectedProduct, quantity: 1, user: user.id };
-    delete newItem["id"];
-    dispatch(addToCartAsync(newItem));
+    if (items.findIndex((item) => item.productId === selectedProduct.id) < 0) {
+      console.log({ items, selectedProduct });
+      const newItem = {
+        ...selectedProduct,
+        productId: selectedProduct.id,
+        quantity: 1,
+        user: user.id,
+      };
+      delete newItem["id"];
+      dispatch(addToCartAsync(newItem));
+      // TODO: it will be based on server response of backend
+      // alert.error("Item added to Cart");
+      toast.error("Item added to Cart", {
+        position: "top-right",
+      });
+    } else {
+      // alert.error('Item Already added');
+      toast.error("Item Already added", {
+        position: "top-right",
+      });
+    }
   };
 
   useEffect(() => {
@@ -153,7 +172,7 @@ const ProductDetails = () => {
               <div className="mt-4 lg:row-span-3 lg:mt-0">
                 <h2 className="sr-only">Product information</h2>
                 <p className="text-3xl tracking-tight text-gray-900">
-                  {product.price}
+                  {discountedPrice(product)}
                 </p>
 
                 {/* Reviews */}

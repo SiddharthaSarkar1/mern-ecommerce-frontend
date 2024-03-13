@@ -28,6 +28,9 @@ import ProtectedAdmin from "./features/auth/components/ProtectedAdmin";
 import AdminHome from "./pages/AdminHome";
 import AdminProductDetailsPage from "./pages/AdminProductDetailsPage";
 import AdminProductFormPage from "./pages/AdminProductFormPage";
+import AdminOrdersPage from "./pages/AdminOrdersPage";
+import { ToastContainer } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
 
 const router = createBrowserRouter([
   {
@@ -95,6 +98,14 @@ const router = createBrowserRouter([
     ),
   },
   {
+    path: "/admin/orders",
+    element: (
+      <ProtectedAdmin>
+        <AdminOrdersPage />
+      </ProtectedAdmin>
+    ),
+  },
+  {
     path: "/admin/product-form/edit/:id",
     element: (
       <ProtectedAdmin>
@@ -145,7 +156,7 @@ function App() {
       {/* <LoginPage /> */}
       {/* <SignupPage /> */}
       <RouterProvider router={router} />
-
+      <ToastContainer />
       {/* Link must be inside the provider */}
     </div>
   );

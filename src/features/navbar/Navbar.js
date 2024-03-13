@@ -10,10 +10,12 @@ import { Link } from "react-router-dom";
 import { selectItems } from "../cart/cartSlice";
 import { selectLoggedInUser } from "../auth/authSlice";
 
+const dummyUserImgUrl = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlcXsKjCnizCaUsarUf6y-gkPBUuFQlUBlL4vBie4Ihh-S4uObaqAS0SwhCeqgHwVOZ6k&usqp=CAU"
+
 const navigation = [
-  { name: "Dashboard", link: "#", user: true },
-  { name: "Team", link: "#", user: true },
-  { name: "Admin", link: "/admin", admin: true },
+  { name: "Products", link: "/", user: true },
+  { name: "Products", link: "/admin", admin: true },
+  { name: "Orders", link: "/admin/orders", admin: true },
 ];
 const userNavigation = [
   { name: "My Profile", link: "/profile" },
@@ -96,7 +98,7 @@ const Navbar = ({ children }) => {
                             <span className="sr-only">Open user menu</span>
                             <img
                               className="h-8 w-8 rounded-full"
-                              src={user.imageUrl}
+                              src={dummyUserImgUrl}
                               alt=""
                             />
                           </Menu.Button>
@@ -176,7 +178,7 @@ const Navbar = ({ children }) => {
                     <div className="flex-shrink-0">
                       <img
                         className="h-10 w-10 rounded-full"
-                        src={user.imageUrl}
+                        src={dummyUserImgUrl}
                         alt=""
                       />
                     </div>
