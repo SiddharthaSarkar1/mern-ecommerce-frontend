@@ -9,7 +9,7 @@ export function fetchAllProduct() {
 
 export function fetchProductById(id) {
   return new Promise(async (resolve) => {
-    const response = await fetch("http://localhost:5050/products?id=" + id);
+    const response = await fetch("http://localhost:5050/products/" + id);
     const data = await response.json();
     resolve({ data });
   });

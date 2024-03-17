@@ -1430,9 +1430,7 @@
       "brand": "Fashion Jewellery",
       "category": "womens-jewellery",
       "thumbnail": "https://cdn.dummyjson.com/product-images/78/thumbnail.jpg",
-      "images": [
-        "https://cdn.dummyjson.com/product-images/78/thumbnail.jpg"
-      ]
+      "images": ["https://cdn.dummyjson.com/product-images/78/thumbnail.jpg"]
     },
     {
       "id": "79",
@@ -1445,9 +1443,7 @@
       "brand": "Fashion Jewellery",
       "category": "womens-jewellery",
       "thumbnail": "https://cdn.dummyjson.com/product-images/79/thumbnail.jpg",
-      "images": [
-        "https://cdn.dummyjson.com/product-images/79/1.jpg"
-      ]
+      "images": ["https://cdn.dummyjson.com/product-images/79/1.jpg"]
     },
     {
       "id": "80",
@@ -2553,24 +2549,21 @@
       "user": "8b80"
     },
     {
-      "0": {
-        "id": "3",
-        "title": "Samsung Universe 9",
-        "description": "Samsung's new variant which goes beyond Galaxy to the Universe",
-        "price": 1111,
-        "discountPercentage": 15.46,
-        "rating": 0,
-        "stock": 0,
-        "brand": "Samsung",
-        "category": "smartphones",
-        "thumbnail": "https://cdn.dummyjson.com/product-images/3/thumbnail.jpg",
-        "images": [
-          "https://cdn.dummyjson.com/product-images/3/1.jpg",
-          "https://cdn.dummyjson.com/product-images/3/1.jpg",
-          "https://cdn.dummyjson.com/product-images/3/1.jpg",
-          "https://cdn.dummyjson.com/product-images/3/thumbnail.jpg"
-        ]
-      },
+      "title": "Samsung Universe 9",
+      "description": "Samsung's new variant which goes beyond Galaxy to the Universe",
+      "price": 1111,
+      "discountPercentage": 15.46,
+      "rating": 0,
+      "stock": 0,
+      "brand": "Samsung",
+      "category": "smartphones",
+      "thumbnail": "https://cdn.dummyjson.com/product-images/3/thumbnail.jpg",
+      "images": [
+        "https://cdn.dummyjson.com/product-images/3/1.jpg",
+        "https://cdn.dummyjson.com/product-images/3/1.jpg",
+        "https://cdn.dummyjson.com/product-images/3/1.jpg",
+        "https://cdn.dummyjson.com/product-images/3/thumbnail.jpg"
+      ],
       "id": "e123",
       "quantity": 1,
       "user": "774a"

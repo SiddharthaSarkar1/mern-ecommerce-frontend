@@ -11,7 +11,7 @@ import { useForm } from "react-hook-form";
 
 export default function UserProfile() {
   const dispatch = useDispatch();
-  const user = useSelector(selectUserInfo);
+  const userInfo = useSelector(selectUserInfo);
   const [selectedEditIndex, setSelectedEditIndex] = useState(-1);
   const [showAddAddressForm, setShowAddAddressForm] = useState(false);
 
@@ -26,21 +26,21 @@ export default function UserProfile() {
   } = useForm();
 
   const handleEdit = (addressUpdate, index) => {
-    const newUser = { ...user, addresses: [...user.addresses] }; //For shallow copy issue
+    const newUser = { ...userInfo, addresses: [...userInfo.addresses] }; //For shallow copy issue
     newUser.addresses.splice(index, 1, addressUpdate);
     dispatch(updateUserAsync(newUser));
     setSelectedEditIndex(-1);
   };
 
   const handleRemove = (e, index) => {
-    const newUser = { ...user, addresses: [...user.addresses] }; //For shallow copy issue
+    const newUser = { ...userInfo, addresses: [...userInfo.addresses] }; //For shallow copy issue
     newUser.addresses.splice(index, 1);
     dispatch(updateUserAsync(newUser));
   };
 
   const handleEditForm = (index) => {
     setSelectedEditIndex(index);
-    const address = user.addresses[index];
+    const address = userInfo.addresses[index];
     setValue("name", address.name);
     setValue("email", address.email);
     setValue("city", address.city);
@@ -51,7 +51,7 @@ export default function UserProfile() {
   };
 
   const handleAdd = (address) => {
-    const newUser = { ...user, addresses: [...user.addresses, address] };
+    const newUser = { ...userInfo, addresses: [...userInfo.addresses, address] };
     dispatch(updateUserAsync(newUser));
     setShowAddAddressForm(false);
   };
@@ -60,14 +60,14 @@ export default function UserProfile() {
     <div>
       <div className="mx-auto mt-12 bg-white max-w-7xl px-6 py-4 sm:px-6 lg:px-8">
         <h1 className="text-4xl font-bold tracking-tight text-gray-900">
-          Name: {user.name ? user.name : "Anonymous User"}
+          Name: {userInfo.name ? userInfo.name : "Anonymous User"}
         </h1>
         <h3 className="text-xl font-bold tracking-tight text-rose-600">
-          Email Adddress: {user.email}
+          Email Adddress: {userInfo.email}
         </h3>
-        {user.role === "admin" && (
+        {userInfo.role === "admin" && (
           <h3 className="text-xl font-bold tracking-tight text-rose-600">
-            Role: {user.role}
+            Role: {userInfo.role}
           </h3>
         )}
 
@@ -244,7 +244,7 @@ export default function UserProfile() {
 
           {/* Address displaying section Start */}
           <p className="mt-4 text-sm text-gray-500">Your Addresses:</p>
-          {user.addresses.map((address, index) => (
+          {userInfo.addresses.map((address, index) => (
             <div key={index}>
               {/* Form Start */}
               {selectedEditIndex === index ? (
