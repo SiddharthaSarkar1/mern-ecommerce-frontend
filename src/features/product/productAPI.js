@@ -43,7 +43,7 @@ export function updateProduct(update) {
   });
 }
 
-export function fetchProductsByFilters(filter, sort, pagination) {
+export function fetchProductsByFilters(filter, sort, pagination, admin) {
   //filter = {"category": ["smartphone", "laptops"]};
   //sort = {_sort: "price", _order: "desc"}
   //http://localhost:5050/products?_sort=price&_order=desc
@@ -65,6 +65,10 @@ export function fetchProductsByFilters(filter, sort, pagination) {
 
   for (let key in pagination) {
     queryString += `${key}=${pagination[key]}&`;
+  }
+
+  if (admin) {
+    queryString += `admin=true`;
   }
 
   // console.log(queryString)

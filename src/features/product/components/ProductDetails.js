@@ -66,7 +66,7 @@ const ProductDetails = () => {
       dispatch(addToCartAsync(newItem));
       // TODO: it will be based on server response of backend
       // alert.error("Item added to Cart");
-      toast.error("Item added to Cart", {
+      toast.success("Item added to Cart", {
         position: "top-right",
       });
     } else {

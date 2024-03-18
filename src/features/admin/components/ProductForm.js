@@ -13,6 +13,7 @@ import {
 } from "../../product/productSlice";
 import { useForm } from "react-hook-form";
 import { useEffect } from "react";
+import { toast } from "react-toastify";
 
 const ProductForm = () => {
   const dispatch = useDispatch();
@@ -44,23 +45,23 @@ const ProductForm = () => {
 
   useEffect(() => {
     if (selectedProduct && params.id) {
-      //this is an json-server issue hence using "selectedProduct[0]"
-      setValue("title", selectedProduct[0].title);
-      setValue("description", selectedProduct[0].description);
-      setValue("price", selectedProduct[0].price);
-      setValue("discountPercentage", selectedProduct[0].discountPercentage);
-      setValue("thumbnail", selectedProduct[0].thumbnail);
-      setValue("stock", selectedProduct[0].stock);
-      setValue("image1", selectedProduct[0].images[0]);
-      setValue("image2", selectedProduct[0].images[1]);
-      setValue("image3", selectedProduct[0].images[2]);
-      setValue("brand", selectedProduct[0].brand);
-      setValue("category", selectedProduct[0].category);
+      //this is an json-server issue hence using "selectedProduct"
+      setValue("title", selectedProduct.title);
+      setValue("description", selectedProduct.description);
+      setValue("price", selectedProduct.price);
+      setValue("discountPercentage", selectedProduct.discountPercentage);
+      setValue("thumbnail", selectedProduct.thumbnail);
+      setValue("stock", selectedProduct.stock);
+      setValue("image1", selectedProduct.images[0]);
+      setValue("image2", selectedProduct.images[1]);
+      setValue("image3", selectedProduct.images[2]);
+      setValue("brand", selectedProduct.brand);
+      setValue("category", selectedProduct.category);
     }
   }, [selectedProduct, params.id, setValue]);
 
   const handleDelete = () => {
-    const product = { ...selectedProduct[0] };
+    const product = { ...selectedProduct };
     product.deleted = true;
     dispatch(updateProductAsync(product));
   };
@@ -90,11 +91,17 @@ const ProductForm = () => {
 
           if (params.id) {
             product.id = params.id;
-            product.rating = selectedProduct[0].rating || 0;
+            product.rating = selectedProduct.rating || 0;
             dispatch(updateProductAsync(product));
+            toast.success("Product Updated Successfully.", {
+              position: "top-right",
+            });
             reset();
           } else {
             dispatch(createProductAsync(product));
+            toast.success("Product Created Successfully.", {
+              position: "top-right",
+            });
             reset();
             //TODO:  on product successfully added clear fields and show a message
           }
@@ -107,6 +114,11 @@ const ProductForm = () => {
             </h2>
 
             <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
+            {selectedProduct.deleted && (
+                <h2 className="text-red-500 font-bold sm:col-span-6">
+                  This product is deleted
+                </h2>
+              )}
               <div className="sm:col-span-full">
                 <label
                   htmlFor="title"
@@ -365,7 +377,7 @@ const ProductForm = () => {
           >
             Cancel
           </button>
-          {selectedProduct && (
+          {selectedProduct && !selectedProduct.deleted && (
             <button
               onClick={handleDelete}
               className="rounded-md bg-rose-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-rose-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rose-600"
