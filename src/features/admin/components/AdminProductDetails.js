@@ -9,7 +9,6 @@ import {
   selectedProductById,
 } from "../../product/productSlice";
 import { addToCartAsync } from "../../cart/cartSlice";
-import { selectLoggedInUser } from "../../auth/authSlice";
 import { discountedPrice } from "../../../app/constants";
 
 //TODO: In server data we will add colors, sizes, highlights. To each products.
@@ -46,7 +45,6 @@ const AdminProductDetails = () => {
   const dispatch = useDispatch();
   const [selectedColor, setSelectedColor] = useState(colors[0]);
   const [selectedSize, setSelectedSize] = useState(sizes[2]);
-  const user = useSelector(selectLoggedInUser);
 
   // const product = useSelector(selectedProductById);
   //Sidd-TODO: this API is functioning differently so need to verify while developing backend
@@ -55,7 +53,7 @@ const AdminProductDetails = () => {
 
   const handleCart = (e) => {
     e.preventDefault();
-    const newItem = { ...selectedProduct, quantity: 1, user: user.id };
+    const newItem = { ...selectedProduct, quantity: 1};
     delete newItem["id"];
     dispatch(addToCartAsync(newItem));
   };

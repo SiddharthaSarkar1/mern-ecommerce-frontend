@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { selectLoggedInUser, createUserAsync } from "../authSlice";
 import { Link, Navigate } from "react-router-dom";
@@ -10,7 +10,6 @@ export default function Signup() {
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
   } = useForm();
 

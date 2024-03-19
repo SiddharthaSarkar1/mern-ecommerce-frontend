@@ -59,8 +59,7 @@ const ProductDetails = () => {
       console.log({ items, product });
       const newItem = {
         product: product.id,
-        quantity: 1,
-        user: user.id,
+        quantity: 1
       };
       delete newItem["id"];
       dispatch(addToCartAsync(newItem));
