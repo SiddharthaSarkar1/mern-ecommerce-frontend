@@ -1,6 +1,6 @@
-export function fetchLoggedInUserOrders(userId) {
+export function fetchLoggedInUserOrders() {
   return new Promise(async (resolve) => {
-    const response = await fetch("http://localhost:5050/orders/user/"+userId);
+    const response = await fetch("http://localhost:5050/orders/own/");
     const data = response.json();
     resolve({ data });
   });

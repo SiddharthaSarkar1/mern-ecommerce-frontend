@@ -49,7 +49,7 @@ const ProductDetails = () => {
   // const product = useSelector(selectedProductById);
   //Sidd-TODO: this API is functioning differently so need to verify while developing backend
   const product = useSelector(selectedProductById);
-  console.log(product);
+  // console.log(product);
   const params = useParams();
   const items = useSelector(selectItems);
 

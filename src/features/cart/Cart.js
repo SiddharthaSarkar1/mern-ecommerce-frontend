@@ -3,6 +3,7 @@ import { Link, Navigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import {
   deleteItemsFromCartAsync,
+  selectCartLoaded,
   selectItems,
   updateCartAsync,
 } from "./cartSlice";
@@ -13,6 +14,8 @@ export default function Cart() {
 
   const dispatch = useDispatch();
   const items = useSelector(selectItems);
+
+  const cartLoaded = useSelector(selectCartLoaded);
 
   const totalAmount = items.reduce(
     (amount, item) => discountedPrice(item.product) * item.quantity + amount,
@@ -32,7 +35,9 @@ export default function Cart() {
 
   return (
     <>
-      {!items.length && <Navigate to="/" replace={true}></Navigate>}
+      {!items.length && cartLoaded && (
+        <Navigate to="/" replace={true}></Navigate>
+      )}
       <div className="mx-auto mt-12 bg-white max-w-7xl px-4 sm:px-6 lg:px-8">
         <h1 className="text-4xl font-bold tracking-tight text-gray-900">
           Cart
@@ -59,7 +64,9 @@ export default function Cart() {
                         </h3>
                         <p className="ml-4">₹{discountedPrice(item.product)}</p>
                       </div>
-                      <p className="mt-1 text-sm text-gray-500">{item.product.brand}</p>
+                      <p className="mt-1 text-sm text-gray-500">
+                        {item.product.brand}
+                      </p>
                     </div>
                     <div className="flex flex-1 items-end justify-between text-sm">
                       <div className="text-gray-500">

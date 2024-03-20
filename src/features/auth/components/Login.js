@@ -1,13 +1,11 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { checkUserAsync, selectError, selectLoggedInUser } from "../authSlice";
+import { loginUserAsync, selectError, selectLoggedInUser } from "../authSlice";
 import { Link, Navigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 
-import { toast } from 'react-toastify';
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
-
 
 export default function Login() {
   const dispatch = useDispatch();
@@ -51,7 +49,7 @@ export default function Login() {
             className="space-y-6"
             onSubmit={handleSubmit((data) => {
               dispatch(
-                checkUserAsync({ email: data.email, password: data.password })
+                loginUserAsync({ email: data.email, password: data.password })
               );
             })}
           >
@@ -115,7 +113,9 @@ export default function Login() {
               )}
 
               {error && (
-                <p className="text-red-500 font-bold">{error.message}</p>
+                <p className="text-red-500 font-bold">
+                  {error || error.message}
+                </p>
               )}
             </div>
 
