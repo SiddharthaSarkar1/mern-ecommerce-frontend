@@ -3,6 +3,9 @@ import { useSelector, useDispatch } from "react-redux";
 import { selectLoggedInUser, createUserAsync } from "../authSlice";
 import { Link, Navigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import { AiFillGithub } from "react-icons/ai";
+import { FcGoogle } from "react-icons/fc";
+import Button from "../../common/components/Button";
 
 export default function Signup() {
   const dispatch = useDispatch();
@@ -146,12 +149,28 @@ export default function Signup() {
             <div>
               <button
                 type="submit"
-                className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-3 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
               >
                 Sign Up
               </button>
             </div>
           </form>
+
+          <div className="flex flex-col gap-4 mt-3">
+            <hr />
+            <Button
+              outline
+              label="Continue with Google"
+              icon={FcGoogle}
+              onClick={() => {}}
+            />
+            <Button
+              outline
+              label="Continue with Github"
+              icon={AiFillGithub}
+              onClick={() => {}}
+            />
+          </div>
 
           <p className="mt-10 text-center text-sm text-gray-500">
             Already a member?{" "}
